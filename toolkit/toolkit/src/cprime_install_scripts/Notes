@@ -1,0 +1,47 @@
+1. download all tar files
+    /home/weblogic/software/ucare/20_3/downloads/connector-classic-distribution-20.3-202004101732-000ab49.tar.gz
+    /home/weblogic/software/ucare/20_3/downloads/connector-distribution-20.3-202004101814-a0c8c66.tar.gz
+    /home/weblogic/software/ucare/20_3/downloads/connector-installer-patch-1.7.1.tar.gz
+    /home/weblogic/software/ucare/20_3/downloads/core-distribution-20.3-202004101547-4cbfcdd-pkg.tar.gz
+    /home/weblogic/software/ucare/20_3/downloads/healthrules-connector-server-4.0.4.tar.gz
+
+Also download relevant version
+    ucare-correspondence-common
+    ucare-correspondence-updater
+    ucare-payor-ref
+
+2. untar core-distribution tar.
+    a. You get healthedge folder after extract
+    b. run healthedge/claimserver/install.sh --full command
+3. upgrade db if needed
+    a. if yes then run healthedge/ddl/oltp/upgrade-oltp.sh and healthedge/ddl/dw/upgrade-dw.sh
+
+4. untar connector-classic-distribution
+    a. run connector-classic-distribution/install.sh
+
+5. delete old healthrules-connector-server-4.0.4, install new healthrules-connector-server-4.0.4 connector server
+    a. untar healthrules-connector-server-4.0.4
+    b. move untard "healthrules-connector-server-4.0.4" to cprime
+
+6. untar connector-installer-patch
+    a. run upgrade-installer.sh
+
+7. untar connector-distribution
+    a. hrc:add-distribution /home/weblogic/software/ucare/20_3_04/downloads/connector-distribution-20.3.0.6-202008060339-edad88a
+
+8. Install below
+feature:install connector-enrollmentsparse-repos
+feature:install elasticsearch
+feature:install elasticsearch-head
+
+9. download
+
+
+hrc:add-distribution /home/weblogic/software/ucare/20_3_06/kars/ucare-correspondence-common-repos-20.3.0.6-202009201650-b2645f5.kar
+hrc:add-distribution /home/weblogic/software/ucare/20_3_06/kars/ucare-correspondence-updater-repos-20.3.0.6-202009201708-f40e0c8.kar
+hrc:add-distribution /home/weblogic/software/ucare/20_3_06/kars/ucare-payor-ref-repos-20.3.0.6-202009201711-f91e204.kar
+
+feature:install ucare-payor-ref-repos
+feature:install ucare-correspondence-common-repos
+feature:install ucare-correspondence-updater-repos
+

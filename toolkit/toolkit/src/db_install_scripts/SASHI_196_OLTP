@@ -1,0 +1,21 @@
+
+SQL*Plus: Release 12.1.0.2.0 Production on Mon Feb 10 05:50:41 2020
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 12c Enterprise Edition Release 12.1.0.2.0 - 64bit Production
+With the Partitioning, OLAP, Advanced Analytics and Real Application Testing options
+
+
+Session altered.
+
+05:50:41 SASHI_196_OLTP @ DB12C > 05:50:41 SASHI_196_OLTP @ DB12C > 05:50:41 SASHI_196_OLTP @ DB12C > 05:50:41 SASHI_196_OLTP @ DB12C > 
+4 rows updated.
+
+05:50:41 SASHI_196_OLTP @ DB12C > 
+Commit complete.
+
+05:50:41 SASHI_196_OLTP @ DB12C > Disconnected from Oracle Database 12c Enterprise Edition Release 12.1.0.2.0 - 64bit Production
+With the Partitioning, OLAP, Advanced Analytics and Real Application Testing options

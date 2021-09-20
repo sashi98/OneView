@@ -1,0 +1,21 @@
+
+SQL*Plus: Release 12.1.0.2.0 Production on Mon Feb 10 06:32:51 2020
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 12c Enterprise Edition Release 12.1.0.2.0 - 64bit Production
+With the Partitioning, OLAP, Advanced Analytics and Real Application Testing options
+
+
+Session altered.
+
+06:32:51 SASHI_196_DW @ DB12C > 06:32:51 SASHI_196_DW @ DB12C > 06:32:51 SASHI_196_DW @ DB12C > 06:32:51 SASHI_196_DW @ DB12C > update USER_ACCOUNT_PASSWORD set PASSWORD_TXT='mzeQQYB5NVLOs62Yik9XCbp5fWk=', SALT_TXT='n0k3JItL'
+       *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+Disconnected from Oracle Database 12c Enterprise Edition Release 12.1.0.2.0 - 64bit Production
+With the Partitioning, OLAP, Advanced Analytics and Real Application Testing options
