@@ -1,0 +1,164 @@
+package mydemo;
+
+import oneview.ui.screens.common.context.OneViewContext;
+import oneview.ui.component.CJTable;
+
+import javax.swing.*;
+import javax.swing.event.TableModelEvent;
+import javax.swing.event.TableModelListener;
+import javax.swing.table.AbstractTableModel;
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
+
+public class TableCellMergeDemo extends JFrame {
+    private CJTable table;
+    private MyTableModel1 model;
+    public TableCellMergeDemo(){
+         model = new MyTableModel1();
+        table = new CJTable(model) {
+            @Override
+            public void updateTable(OneViewContext ctx) {
+
+            }
+        };
+        table.getTableHeader().setPreferredSize(new Dimension(100, 25));
+
+        JScrollPane tableScrollPane = new JScrollPane(table);
+
+        this.add(tableScrollPane);
+
+        this.setSize(new Dimension(600, 700));
+        this.setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        TableCellMergeDemo demo = new TableCellMergeDemo();
+    }
+}
+
+
+class MyTableModel1 extends AbstractTableModel implements TableModelListener {
+    private String[] headers = new String[]{
+            "AAAA", "BBBB","CCCC", "DDDD", "EEEE"
+    };
+    private List<MyData> dataList;
+    public MyTableModel1(){
+        super();
+        this.dataList = new ArrayList<>();
+        for(int i=0; i<15; i++){
+            MyData d = new MyData(i+"a", i+"b", i+"c", i+"d", i+"e");
+            dataList.add(d);
+        }
+
+        this.addTableModelListener(this);
+    }
+
+    @Override
+    public String getColumnName(int column) {
+        return headers[column];
+    }
+
+    @Override
+    public int getRowCount() {
+        return this.dataList.size();
+    }
+
+    @Override
+    public int getColumnCount() {
+        return headers.length;
+    }
+
+    @Override
+    public Object getValueAt(int r, int c) {
+        Object o=null;
+        switch (headers[c]){
+            case "AAAA":
+                o = dataList.get(r).getA1();
+                break;
+            case "BBBB":
+                o = dataList.get(r).getA2();
+                break;
+            case "CCCC":
+                o = dataList.get(r).getA3();
+                break;
+            case "DDDD":
+                o = dataList.get(r).getA4();
+                break;
+            case "EEEE":
+                o = dataList.get(r).getA5();
+                break;
+
+        }
+        return o;
+    }
+
+    @Override
+    public void tableChanged(TableModelEvent tableModelEvent) {
+
+    }
+
+    public String[] getHeader() {
+        return headers;
+    }
+
+    public List getData() {
+        return dataList;
+    }
+}
+
+class MyData{
+    private String a1;
+    private String a2;
+    private String a3;
+    private String a4;
+    private String a5;
+
+    public MyData(String a1, String a2, String a3, String a4, String a5) {
+        this.a1 = a1;
+        this.a2 = a2;
+        this.a3 = a3;
+        this.a4 = a4;
+        this.a5 = a5;
+    }
+
+    public String getA1() {
+        return a1;
+    }
+
+    public void setA1(String a1) {
+        this.a1 = a1;
+    }
+
+    public String getA2() {
+        return a2;
+    }
+
+    public void setA2(String a2) {
+        this.a2 = a2;
+    }
+
+    public String getA3() {
+        return a3;
+    }
+
+    public void setA3(String a3) {
+        this.a3 = a3;
+    }
+
+    public String getA4() {
+        return a4;
+    }
+
+    public void setA4(String a4) {
+        this.a4 = a4;
+    }
+
+    public String getA5() {
+        return a5;
+    }
+
+    public void setA5(String a5) {
+        this.a5 = a5;
+    }
+}

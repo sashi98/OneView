@@ -1,0 +1,19 @@
+//                CJTextField varName = new CJTextField(250, TEXT_FIELD_HEIGHT);
+//                CJTextField varValue = new CJTextField(250, TEXT_FIELD_HEIGHT);
+//                Icon applyBtn = FileUtil.getScaledIcon(APPLY_ICON, ICON_WIDTH/2, ICON_HEIGHT/2, SCALE_SMOOTH);
+//                Icon cancelBtn = FileUtil.getScaledIcon(CANCEL_ICON, ICON_WIDTH/2, ICON_HEIGHT/2,SCALE_SMOOTH);
+//                Object[] options = {applyBtn, cancelBtn};
+//
+//                final JComponent[] inputs = new JComponent[] {
+//                        new CJPanel(new CJLabel("Variable Name"),varName),
+//                        newDummyPanelObj(),
+//                        new CJPanel(new CJLabel("Variable Value"),varValue)
+//                };
+//                int optionBtnClicked = JOptionPane.showOptionDialog(null, inputs,
+//                        "New User Variable", JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE,
+//                        null, options, ""
+//                        );
+//                System.out.println(optionBtnClicked);
+//                if (JOptionPane.YES_OPTION == optionBtnClicked){
+//                    EnvironmentVariables.add(varName.getText(), varValue.getText());
+//                }

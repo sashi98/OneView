@@ -1,0 +1,1 @@
+ps aux|grep java|grep /home/weblogic/cprime/healthrules-connector-server-4.0.4

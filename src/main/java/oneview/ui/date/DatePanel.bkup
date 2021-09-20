@@ -1,0 +1,181 @@
+package oneview.ui.date;
+
+import oneview.ui.screens.jobtrigger.context.ESContext;
+import oneview.ui.component.CJLabel;
+import oneview.ui.component.CJPanel;
+import oneview.ui.component.CJTextField;
+import org.jdatepicker.impl.JDatePanelImpl;
+import org.jdatepicker.impl.JDatePickerImpl;
+import org.jdatepicker.impl.UtilDateModel;
+
+import javax.swing.*;
+import javax.swing.border.TitledBorder;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
+import java.text.ParseException;
+import java.util.Calendar;
+import java.util.Properties;
+
+import static oneview.util.DateUtil.sleep;
+import static oneview.util.GuiUtil.*;
+
+public class DatePanel extends CJPanel {
+    private JDatePickerImpl datePicker;
+    private CJLabel nameLabel;
+    private CJTextField hhText;
+    private CJTextField mmText;
+    private CJTextField ssText;
+    private JCheckBox eodCheckBox;
+    private boolean needEODCheckBox;
+    private String defaultHH;
+    private String defaultMM;
+    private String defaultSS;
+
+    public DatePanel(String name, int width, int height, boolean needEODCheckBox) {
+        super();
+        this.needEODCheckBox = needEODCheckBox;
+
+        nameLabel = new CJLabel(name, 80, percent(height, 88));
+        TimeTextFormator hrTextFormator = new TimeTextFormator(TimeTextFormator.TIME_TYPE.HOUR);
+        TimeTextFormator minTextFormator = new TimeTextFormator(TimeTextFormator.TIME_TYPE.MIN);
+        TimeTextFormator secTextFormator = new TimeTextFormator(TimeTextFormator.TIME_TYPE.SEC);
+        hhText = new CJTextField(percent(width, 5), percent(height, 88), hrTextFormator);
+        mmText = new CJTextField(percent(width, 5), percent(height, 88), minTextFormator);
+        ssText = new CJTextField(percent(width, 5), percent(height, 88), secTextFormator);
+        eodCheckBox = new JCheckBox();
+        eodCheckBox.setToolTipText("EOD Check");
+
+        UtilDateModel model = new UtilDateModel();
+        model.setSelected(true);
+        Properties properties = new Properties();
+        properties.setProperty("text.today", "Today");
+        JDatePanelImpl datePikerPanel = new JDatePanelImpl(model, properties);
+        datePicker = new JDatePickerImpl(datePikerPanel, new DateLabelFormatter());
+
+        createUI(width, height);
+        setDateTime();
+    }
+
+    public void setDateTime() {
+        try {
+            sleep(100);
+            Calendar cal = getCalendarObj();
+            datePicker.getJFormattedTextField().setText(datePicker.getJFormattedTextField().getFormatter().valueToString(cal));
+            if (needEODCheckBox && eodCheckBox.isSelected()) {
+                hhText.setText(hhText.getFormatter().valueToString(String.valueOf(23)));
+                mmText.setText(mmText.getFormatter().valueToString(String.valueOf(59)));
+                ssText.setText(ssText.getFormatter().valueToString(String.valueOf(59)));
+            } else if (needEODCheckBox && !eodCheckBox.isSelected()) {
+                hhText.setText(hhText.getFormatter().valueToString(defaultHH));
+                mmText.setText(mmText.getFormatter().valueToString(defaultMM));
+                ssText.setText(ssText.getFormatter().valueToString(defaultSS));
+            } else {
+                hhText.setText(hhText.getFormatter().valueToString(String.valueOf(cal.get(Calendar.HOUR))));
+                mmText.setText(mmText.getFormatter().valueToString(String.valueOf(cal.get(Calendar.MINUTE))));
+                ssText.setText(ssText.getFormatter().valueToString(String.valueOf(cal.get(Calendar.SECOND))));
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public Calendar getCalendarObj() {
+        Calendar cal = Calendar.getInstance();
+        return cal;
+    }
+
+    private void setPanelSize(int w, int h) {
+        int dateStrLen = datePicker.getModel().getValue().toString().length();
+        int textFieldWidth = percent(dateStrLen, 400);
+        datePicker.setPreferredSize(newDimentionObj(textFieldWidth, h));
+        datePicker.getJFormattedTextField().setPreferredSize(newDimentionObj(textFieldWidth, h));
+       // this.setPreferredSize(newDimentionObj(w, h));
+    }
+
+    private void createUI(int width, int height) {
+        setPanelSize(width, height);
+        addComponentsWithFlowLayout();
+    }
+
+    private void addComponentsWithFlowLayout() {
+        LayoutManager lm = new FlowLayout(FlowLayout.LEFT,0, 0);
+        this.setLayout(lm);
+        this.add(nameLabel);
+        this.add(newDummyPanelObj(5,1));
+        this.add(datePicker);
+        this.add(newDummyPanelObj(5, 1));
+        this.add(hhText);
+        this.add(newDummyPanelObj(5, 1));
+        this.add(mmText);
+        this.add(newDummyPanelObj(5, 1));
+        this.add(ssText);
+        if (needEODCheckBox) {
+            this.add(newDummyPanelObj(5, 1));
+            this.add(eodCheckBox);
+        }
+    }
+
+
+    public String getDateTime() {
+        String date = this.datePicker.getJFormattedTextField().getText();
+        String hh = this.hhText.getText();
+        String mm = this.mmText.getText();
+        String ss = this.ssText.getText();
+        return date + " " + hh + ":" + mm + ":" + ss+".000";
+    }
+
+    public CJTextField getHhText() {
+        return hhText;
+    }
+
+    public CJTextField getMmText() {
+        return mmText;
+    }
+
+    public CJTextField getSsText() {
+        return ssText;
+    }
+
+    public void keyTyped(KeyEvent e, MasterData ESContext) {
+        try {
+            if (e.getSource().equals(this.getHhText())) {
+                this.getHhText().getFormatter().valueToString(this.getHhText().getText());
+            }
+            if (e.getSource().equals(this.getMmText())) {
+                this.getMmText().getFormatter().valueToString(this.getMmText().getText());
+            }
+            if (e.getSource().equals(this.getSsText())) {
+                this.getSsText().getFormatter().valueToString(this.getSsText().getText());
+            }
+
+        } catch (ParseException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public void keyPressed(KeyEvent e, MasterData ESContext) {
+
+    }
+
+    public void keyReleased(KeyEvent e, MasterData ESContext) {
+        if (needEODCheckBox && !eodCheckBox.isSelected()) {
+            defaultHH = this.getHhText().getText();
+            defaultMM = this.getMmText().getText();
+            defaultSS = this.getSsText().getText();
+            ESContext.setEndDateTime(this.getDateTime());
+        }
+    }
+
+    public boolean isNeedEODCheckBox() {
+        return needEODCheckBox;
+    }
+
+    public JCheckBox getEodCheckBox() {
+        return eodCheckBox;
+    }
+
+    public void actionPerformed(ActionEvent e, MasterData ESContext) {
+        setDateTime();
+    }
+}

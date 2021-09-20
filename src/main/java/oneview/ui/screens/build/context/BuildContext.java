@@ -1,0 +1,46 @@
+package oneview.ui.screens.build.context;
+
+import oneview.ui.screens.common.context.OneViewContext;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+public class BuildContext implements OneViewContext {
+
+    private HashMap<String, Object> hm;
+
+    public BuildContext(){
+        hm = new HashMap<>();
+    }
+
+    public void set(String key, Object val){
+        hm.put(key,val);
+    }
+
+    public void validate() {}
+
+    public String getStringValue(String key) {
+        String val = String.valueOf(hm.get(key));
+        return (val == null || val.equals("null") || val.trim().equals(""))?"":val;
+    }
+
+    public List<Object> getListValue(String key){
+        List<Object> list = (List<Object>) hm.get(key);
+        if (list == null){
+            list = new ArrayList<>();
+        }
+        return list;
+    }
+
+    @Override
+    public Object getObject(String key) {
+        return hm.get(key);
+    }
+
+    @Override
+    public void remove(String key) {
+        hm.remove(key);
+    }
+
+}

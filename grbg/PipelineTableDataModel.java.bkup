@@ -1,0 +1,135 @@
+package oneview.ui.screens.deploy.pipeline.table;
+
+
+import javax.swing.event.TableModelEvent;
+import javax.swing.event.TableModelListener;
+import javax.swing.table.AbstractTableModel;
+import java.util.ArrayList;
+import java.util.List;
+
+public class PipelineTableDataModel extends AbstractTableModel implements TableModelListener {
+    private static final String UNINSTALL = "Uninstall";
+    private static final String STOP_SERVER = "Stop Server";
+    private static final String CLEANUP = "Cleanup";
+    private static final String START_SERVER = "Start Server";
+    private static final String ADD_DISTRIBUTION = "Add Distribution";
+    private static final String INSTALL = "Install";
+
+    private String[] header = new String[]{UNINSTALL,STOP_SERVER,CLEANUP,START_SERVER,ADD_DISTRIBUTION,INSTALL};
+
+    public enum ColumnIndex {
+        UNINSTALL_INDEX,STOP_SERVER_INDEX,CLEANUP_INDEX,START_SERVER_INDEX,ADD_DISTRIBUTION_INDEX,INSTALL_INDEX
+    }
+
+    private List<PipelineTableData> dataList;
+
+    public PipelineTableDataModel() {
+        this.dataList = new ArrayList<>();
+        PipelineTableData data = new PipelineTableData();
+        dataList.add(data);
+    }
+
+    public PipelineTableDataModel(List<PipelineTableData> dataList) {
+        this();
+        if (dataList != null) {
+            this.dataList = dataList;
+        } else {
+            this.dataList = new ArrayList<>();
+        }
+        this.dataList.add(new PipelineTableData());
+    }
+
+
+    @Override
+    public int getRowCount() {
+        return dataList.size();
+    }
+
+    @Override
+    public int getColumnCount() {
+        return header.length;
+    }
+
+    @Override
+    public Object getValueAt(int rowIndex, int columnIndex) {
+        if (dataList.isEmpty()) return null;
+        Object o = null;
+        switch (header[columnIndex]) {
+            case UNINSTALL:
+                o = dataList.get(rowIndex).getUninstall();
+                break;
+            case STOP_SERVER:
+                o = dataList.get(rowIndex).getStopServer();
+                break;
+            case CLEANUP:
+                o = dataList.get(rowIndex).getCleanup();
+                break;
+            case START_SERVER:
+                o = dataList.get(rowIndex).getStartServer();
+                break;
+            case ADD_DISTRIBUTION:
+                o = dataList.get(rowIndex).getAddDistribution();
+                break;
+            case INSTALL:
+                o = dataList.get(rowIndex).getInstall();
+                break;
+        }
+        return o;
+    }
+
+    public void setHeader(String[] header) {
+        this.header = header;
+    }
+
+    @Override
+    public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
+        this.dataList.add((PipelineTableData) aValue);
+    }
+
+    public String getColumnName(int col) {
+        return header[col];
+    }
+
+    public Class<?> getColumnClass(int col) {
+        if (dataList.isEmpty()) return "".getClass();
+        return getValueAt(0, col).getClass();
+    }
+
+    public List<PipelineTableData> getDataList() {
+        return dataList;
+    }
+
+    public void setDataList(List<PipelineTableData> dataList) {
+        this.dataList = dataList;
+    }
+
+    @Override
+    public void tableChanged(TableModelEvent e) {
+    }
+
+    public String getLog(int rowIndex, int columnIndex) {
+        if (dataList.isEmpty()) return null;
+        String o = null;
+        switch (header[columnIndex]) {
+            case UNINSTALL:
+                o = dataList.get(rowIndex).getUninstallLog();
+                break;
+            case STOP_SERVER:
+                o = dataList.get(rowIndex).getStopServerLog();
+                break;
+            case CLEANUP:
+                o = dataList.get(rowIndex).getCleanupLog();
+                break;
+            case START_SERVER:
+                o = dataList.get(rowIndex).getStartServerLog();
+                break;
+            case ADD_DISTRIBUTION:
+                o = dataList.get(rowIndex).getAddDistributionLog();
+                break;
+            case INSTALL:
+                o = dataList.get(rowIndex).getInstallLog();
+                break;
+        }
+        return o;
+    }
+}

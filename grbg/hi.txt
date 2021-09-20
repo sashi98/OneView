@@ -1,0 +1,208 @@
+/usr/lib/jvm/java-1.8.0-openjdk/bin/java -javaagent:/opt/idea-IC-193.5662.53/lib/idea_rt.jar=12815:/opt/idea-IC-193.5662.53/bin -Dfile.encoding=UTF-8 -classpath /usr/lib/jvm/java-1.8.0-openjdk/jre/lib/charsets.jar:/usr/lib/jvm/java-1.8.0-openjdk/jre/lib/ext/cldrdata.jar:/usr/lib/jvm/java-1.8.0-openjdk/jre/lib/ext/dnsns.jar:/usr/lib/jvm/java-1.8.0-openjdk/jre/lib/ext/jaccess.jar:/usr/lib/jvm/java-1.8.0-openjdk/jre/lib/ext/localedata.jar:/usr/lib/jvm/java-1.8.0-openjdk/jre/lib/ext/nashorn.jar:/usr/lib/jvm/java-1.8.0-openjdk/jre/lib/ext/sunec.jar:/usr/lib/jvm/java-1.8.0-openjdk/jre/lib/ext/sunjce_provider.jar:/usr/lib/jvm/java-1.8.0-openjdk/jre/lib/ext/sunpkcs11.jar:/usr/lib/jvm/java-1.8.0-openjdk/jre/lib/ext/zipfs.jar:/usr/lib/jvm/java-1.8.0-openjdk/jre/lib/jce.jar:/usr/lib/jvm/java-1.8.0-openjdk/jre/lib/jfr.jar:/usr/lib/jvm/java-1.8.0-openjdk/jre/lib/jsse.jar:/usr/lib/jvm/java-1.8.0-openjdk/jre/lib/management-agent.jar:/usr/lib/jvm/java-1.8.0-openjdk/jre/lib/resources.jar:/usr/lib/jvm/java-1.8.0-openjdk/jre/lib/rt.jar:/home/weblogic/PROJECT/OneView/target/classes:/home/weblogic/.m2/repository/com/toedter/jcalendar/1.4/jcalendar-1.4.jar:/home/weblogic/.m2/repository/com/github/lgooddatepicker/LGoodDatePicker/10.4.1/LGoodDatePicker-10.4.1.jar:/home/weblogic/.m2/repository/commons-io/commons-io/2.7/commons-io-2.7.jar:/home/weblogic/.m2/repository/org/apache/commons/commons-lang3/3.11/commons-lang3-3.11.jar mydemo.RunCommandDemo
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO]
+[INFO] HealthRules Ucare PS :: ucare-core
+[INFO] Connector Correspondence:: ucare-core-processor
+[INFO] Connector Correspondence:: ucare-core-bundle
+[INFO] Connector Correspondence:: ucare-core-repos
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building HealthRules Ucare PS :: ucare-core 20.3.0.6-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ ucare-core ---
+[INFO]
+[INFO] --- maven-enforcer-plugin:3.0.0-M1:enforce (enforce-maven) @ ucare-core ---
+[INFO]
+[INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent (agent-for-unit-tests) @ ucare-core ---
+[INFO] argLine set to -javaagent:/home/weblogic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/weblogic/PROJECT/MASTER/ucare-core/target/jacoco.exec,append=true
+[INFO]
+[INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent-integration (agent-for-integ-tests) @ ucare-core ---
+[INFO] argLine set to -javaagent:/home/weblogic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/weblogic/PROJECT/MASTER/ucare-core/target/jacoco-it.exec,append=true
+[INFO]
+[INFO] --- jacoco-maven-plugin:0.8.2:report (jacoco-site) @ ucare-core ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO]
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ ucare-core ---
+[INFO] Installing /home/weblogic/PROJECT/MASTER/ucare-core/pom.xml to /home/weblogic/.m2/repository/com/healthedge/customer/ucare/ucare-core/20.3.0.6-SNAPSHOT/ucare-core-20.3.0.6-SNAPSHOT.pom
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Connector Correspondence:: ucare-core-processor 20.3.0.6-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ ucare-core-processor ---
+[INFO] Deleting /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-processor/target
+[INFO]
+[INFO] --- maven-enforcer-plugin:3.0.0-M1:enforce (enforce-maven) @ ucare-core-processor ---
+[INFO]
+[INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent (agent-for-unit-tests) @ ucare-core-processor ---
+[INFO] argLine set to -javaagent:/home/weblogic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-processor/target/jacoco.exec,append=true
+[INFO]
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ ucare-core-processor ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-processor/src/main/resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ ucare-core-processor ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 8 source files to /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-processor/target/classes
+[INFO] /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-processor/src/main/java/com/healthedge/customer/ucare/component/ComponentScan.java: /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-processor/src/main/java/com/healthedge/customer/ucare/component/ComponentScan.java uses unchecked or unsafe operations.
+[INFO] /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-processor/src/main/java/com/healthedge/customer/ucare/component/ComponentScan.java: Recompile with -Xlint:unchecked for details.
+[INFO]
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ ucare-core-processor ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-processor/src/test/resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ ucare-core-processor ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 7 source files to /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-processor/target/test-classes
+[INFO] /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-processor/src/test/java/com/healthedge/customer/ucare/component/ComponentScanTest.java: /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-processor/src/test/java/com/healthedge/customer/ucare/component/ComponentScanTest.java uses unchecked or unsafe operations.
+[INFO] /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-processor/src/test/java/com/healthedge/customer/ucare/component/ComponentScanTest.java: Recompile with -Xlint:unchecked for details.
+[INFO]
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ ucare-core-processor ---
+[INFO] Tests are skipped.
+[INFO]
+[INFO] --- maven-jar-plugin:2.6:jar (default-jar) @ ucare-core-processor ---
+[INFO] Building jar: /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-processor/target/ucare-core-processor-20.3.0.6-SNAPSHOT.jar
+[INFO]
+[INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent-integration (agent-for-integ-tests) @ ucare-core-processor ---
+[INFO] argLine set to -javaagent:/home/weblogic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-processor/target/jacoco-it.exec,append=true
+[INFO]
+[INFO] --- jacoco-maven-plugin:0.8.2:report (jacoco-site) @ ucare-core-processor ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO]
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ ucare-core-processor ---
+[INFO] Installing /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-processor/target/ucare-core-processor-20.3.0.6-SNAPSHOT.jar to /home/weblogic/.m2/repository/com/healthedge/customer/ucare/ucare-core-processor/20.3.0.6-SNAPSHOT/ucare-core-processor-20.3.0.6-SNAPSHOT.jar
+[INFO] Installing /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-processor/pom.xml to /home/weblogic/.m2/repository/com/healthedge/customer/ucare/ucare-core-processor/20.3.0.6-SNAPSHOT/ucare-core-processor-20.3.0.6-SNAPSHOT.pom
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Connector Correspondence:: ucare-core-bundle 20.3.0.6-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ ucare-core-bundle ---
+[INFO] Deleting /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-bundle/target
+[INFO]
+[INFO] --- maven-enforcer-plugin:3.0.0-M1:enforce (enforce-maven) @ ucare-core-bundle ---
+[INFO]
+[INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent (agent-for-unit-tests) @ ucare-core-bundle ---
+[INFO] argLine set to -javaagent:/home/weblogic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-bundle/target/jacoco.exec,append=true
+[INFO]
+[INFO] --- hegenerator-maven-plugin:20.3.0.6-202009091547-db67a93:sqrygen (generate-static-queries) @ ucare-core-bundle ---
+[INFO]
+[INFO] --- hegenerator-maven-plugin:20.3.0.6-202009091547-db67a93:inquirygen (generate-static-queries) @ ucare-core-bundle ---
+[INFO]
+[INFO] --- properties-maven-plugin:1.0.0:write-project-properties (default) @ ucare-core-bundle ---
+[INFO]
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ ucare-core-bundle ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-bundle/src/main/resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ ucare-core-bundle ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 100 source files to /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-bundle/target/classes
+[INFO] Found class with @Component:UCareHouseholdingService
+[INFO] Found class with @Component:UCareMemberCorrespondenceService
+[INFO] Found class with @Component:UCareTransactionPrioritizationService
+[INFO] Found class with @Component:UCareAccountChangeService
+[INFO] Found class with @Component:UCareMemberEnrollmentService
+[INFO] Found class with @Component:UCareMemberReenrollmentService
+[INFO] Found class with @Component:UCareMemberNameChangeService
+[INFO] Found class with @Component:UCareExtractService
+[INFO] Found class with @Component:UCareManualCorrespondenceService
+[INFO] Found class with @Component:UCareMemberLISChangeService
+[INFO] Found class with @Component:UCareMemberDentalChangeService
+[INFO] Found class with @Component:UCareMemberAnnualJobRunService
+[INFO] Found class with @Component:UCareBenefitPlanChangeService
+[INFO] /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-bundle/src/main/java/com/healthedge/customer/ucare/core/processor/AUCareProcessor.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-bundle/src/main/java/com/healthedge/customer/ucare/core/processor/AUCareProcessor.java: Recompile with -Xlint:unchecked for details.
+[INFO]
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ ucare-core-bundle ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-bundle/src/test/resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ ucare-core-bundle ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 50 source files to /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-bundle/target/test-classes
+[WARNING] The following options were not recognized by any processor: '[package]'
+[INFO] /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-bundle/src/test/java/com/healthedge/customer/ucare/core/service/impl/TestUcareExtractService.java: /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-bundle/src/test/java/com/healthedge/customer/ucare/core/service/impl/TestUcareExtractService.java uses or overrides a deprecated API.
+[INFO] /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-bundle/src/test/java/com/healthedge/customer/ucare/core/service/impl/TestUcareExtractService.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-bundle/src/test/java/com/healthedge/customer/ucare/core/service/impl/TestUCareManualCorrespondenceService.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-bundle/src/test/java/com/healthedge/customer/ucare/core/service/impl/TestUCareManualCorrespondenceService.java: Recompile with -Xlint:unchecked for details.
+[INFO]
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ ucare-core-bundle ---
+[INFO] Tests are skipped.
+[INFO]
+[INFO] --- maven-bundle-plugin:3.0.1:bundle (default-bundle) @ ucare-core-bundle ---
+[WARNING] Bundle com.healthedge.customer.ucare:ucare-core-bundle:bundle:20.3.0.6-SNAPSHOT : Unused Export-Package instructions: [com.healthedge.customer.ucare.shared.*]
+[INFO]
+[INFO] --- build-helper-maven-plugin:1.10:attach-artifact (attach-artifact) @ ucare-core-bundle ---
+[INFO]
+[INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent-integration (agent-for-integ-tests) @ ucare-core-bundle ---
+[INFO] argLine set to -javaagent:/home/weblogic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-bundle/target/jacoco-it.exec,append=true
+[INFO]
+[INFO] --- jacoco-maven-plugin:0.8.2:report (jacoco-site) @ ucare-core-bundle ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO]
+[INFO] --- maven-install-plugin:3.0.0-M1:install (default-install) @ ucare-core-bundle ---
+[INFO] Installing /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-bundle/target/ucare-core-bundle-20.3.0.6-SNAPSHOT.jar to /home/weblogic/.m2/repository/com/healthedge/customer/ucare/ucare-core-bundle/20.3.0.6-SNAPSHOT/ucare-core-bundle-20.3.0.6-SNAPSHOT.jar
+[INFO] Installing /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-bundle/pom.xml to /home/weblogic/.m2/repository/com/healthedge/customer/ucare/ucare-core-bundle/20.3.0.6-SNAPSHOT/ucare-core-bundle-20.3.0.6-SNAPSHOT.pom
+[INFO] Installing /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-bundle/target/classes/core-build.properties to /home/weblogic/.m2/repository/com/healthedge/customer/ucare/ucare-core-bundle/20.3.0.6-SNAPSHOT/ucare-core-bundle-20.3.0.6-SNAPSHOT-core-build.properties
+[INFO]
+[INFO] --- maven-bundle-plugin:3.0.1:install (default-install) @ ucare-core-bundle ---
+[INFO] Installing com/healthedge/customer/ucare/ucare-core-bundle/20.3.0.6-SNAPSHOT/ucare-core-bundle-20.3.0.6-SNAPSHOT.jar
+[INFO] Writing OBR metadata
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Connector Correspondence:: ucare-core-repos 20.3.0.6-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ ucare-core-repos ---
+[INFO] Deleting /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-repos/target
+[INFO]
+[INFO] --- maven-enforcer-plugin:3.0.0-M1:enforce (enforce-maven) @ ucare-core-repos ---
+[INFO]
+[INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent (agent-for-unit-tests) @ ucare-core-repos ---
+[INFO] argLine set to -javaagent:/home/weblogic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-repos/target/jacoco.exec,append=true
+[INFO]
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ ucare-core-repos ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-repos/src/main/resources
+[INFO]
+[INFO] --- karaf-maven-plugin:4.0.4:features-generate-descriptor (default-features-generate-descriptor) @ ucare-core-repos ---
+[INFO] Generating feature descriptor file /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-repos/target/feature/feature.xml
+[INFO] ...done!
+[INFO]
+[INFO] --- karaf-maven-plugin:4.0.4:kar (default-kar) @ ucare-core-repos ---
+[INFO] Building jar: /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-repos/target/ucare-core-repos-20.3.0.6-SNAPSHOT.kar
+[INFO] repository/com/healthedge/customer/ucare/ucare-core-bundle/20.3.0.6-SNAPSHOT/maven-metadata-local.xml already added, skipping
+[INFO]
+[INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent-integration (agent-for-integ-tests) @ ucare-core-repos ---
+[INFO] argLine set to -javaagent:/home/weblogic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-repos/target/jacoco-it.exec,append=true
+[INFO]
+[INFO] --- jacoco-maven-plugin:0.8.2:report (jacoco-site) @ ucare-core-repos ---
+[INFO] Skipping JaCoCo execution due to missing execution data file.
+[INFO]
+[INFO] --- maven-install-plugin:3.0.0-M1:install (default-install) @ ucare-core-repos ---
+[INFO] Installing /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-repos/target/ucare-core-repos-20.3.0.6-SNAPSHOT.kar to /home/weblogic/.m2/repository/com/healthedge/customer/ucare/ucare-core-repos/20.3.0.6-SNAPSHOT/ucare-core-repos-20.3.0.6-SNAPSHOT.kar
+[INFO] Installing /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-repos/pom.xml to /home/weblogic/.m2/repository/com/healthedge/customer/ucare/ucare-core-repos/20.3.0.6-SNAPSHOT/ucare-core-repos-20.3.0.6-SNAPSHOT.pom
+[INFO] Installing /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-repos/target/feature/feature.xml to /home/weblogic/.m2/repository/com/healthedge/customer/ucare/ucare-core-repos/20.3.0.6-SNAPSHOT/ucare-core-repos-20.3.0.6-SNAPSHOT-features.xml
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO]
+[INFO] HealthRules Ucare PS :: ucare-core ................. SUCCESS [  0.510 s]
+[INFO] Connector Correspondence:: ucare-core-processor .... SUCCESS [  1.100 s]
+[INFO] Connector Correspondence:: ucare-core-bundle ....... SUCCESS [  9.678 s]
+[INFO] Connector Correspondence:: ucare-core-repos ........ SUCCESS [  0.495 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 12.952 s
+[INFO] Finished at: 2020-10-22T07:27:44-04:00
+[INFO] Final Memory: 124M/1909M
+[INFO] ------------------------------------------------------------------------
+[INFO] Scanning for projects...[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:[INFO] [INFO] HealthRules Ucare PS :: ucare-core[INFO] Connector Correspondence:: ucare-core-processor[INFO] Connector Correspondence:: ucare-core-bundle[INFO] Connector Correspondence:: ucare-core-repos[INFO]                                                                         [INFO] ------------------------------------------------------------------------[INFO] Building HealthRules Ucare PS :: ucare-core 20.3.0.6-SNAPSHOT[INFO] ------------------------------------------------------------------------[INFO] [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ ucare-core ---[INFO] [INFO] --- maven-enforcer-plugin:3.0.0-M1:enforce (enforce-maven) @ ucare-core ---[INFO] [INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent (agent-for-unit-tests) @ ucare-core ---[INFO] argLine set to -javaagent:/home/weblogic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/weblogic/PROJECT/MASTER/ucare-core/target/jacoco.exec,append=true[INFO] [INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent-integration (agent-for-integ-tests) @ ucare-core ---[INFO] argLine set to -javaagent:/home/weblogic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/weblogic/PROJECT/MASTER/ucare-core/target/jacoco-it.exec,append=true[INFO] [INFO] --- jacoco-maven-plugin:0.8.2:report (jacoco-site) @ ucare-core ---[INFO] Skipping JaCoCo execution due to missing execution data file.[INFO] [INFO] --- maven-install-plugin:2.4:install (default-install) @ ucare-core ---[INFO] Installing /home/weblogic/PROJECT/MASTER/ucare-core/pom.xml to /home/weblogic/.m2/repository/com/healthedge/customer/ucare/ucare-core/20.3.0.6-SNAPSHOT/ucare-core-20.3.0.6-SNAPSHOT.pom[INFO]                                                                         [INFO] ------------------------------------------------------------------------[INFO] Building Connector Correspondence:: ucare-core-processor 20.3.0.6-SNAPSHOT[INFO] ------------------------------------------------------------------------[INFO] [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ ucare-core-processor ---[INFO] Deleting /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-processor/target[INFO] [INFO] --- maven-enforcer-plugin:3.0.0-M1:enforce (enforce-maven) @ ucare-core-processor ---[INFO] [INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent (agent-for-unit-tests) @ ucare-core-processor ---[INFO] argLine set to -javaagent:/home/weblogic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-processor/target/jacoco.exec,append=true[INFO] [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ ucare-core-processor ---[INFO] Using 'UTF-8' encoding to copy filtered resources.[INFO] skip non existing resourceDirectory /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-processor/src/main/resources[INFO] [INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ ucare-core-processor ---[INFO] Changes detected - recompiling the module![INFO] Compiling 8 source files to /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-processor/target/classes[INFO] /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-processor/src/main/java/com/healthedge/customer/ucare/component/ComponentScan.java: /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-processor/src/main/java/com/healthedge/customer/ucare/component/ComponentScan.java uses unchecked or unsafe operations.[INFO] /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-processor/src/main/java/com/healthedge/customer/ucare/component/ComponentScan.java: Recompile with -Xlint:unchecked for details.[INFO] [INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ ucare-core-processor ---[INFO] Using 'UTF-8' encoding to copy filtered resources.[INFO] skip non existing resourceDirectory /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-processor/src/test/resources[INFO] [INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ ucare-core-processor ---[INFO] Changes detected - recompiling the module![INFO] Compiling 7 source files to /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-processor/target/test-classes[INFO] /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-processor/src/test/java/com/healthedge/customer/ucare/component/ComponentScanTest.java: /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-processor/src/test/java/com/healthedge/customer/ucare/component/ComponentScanTest.java uses unchecked or unsafe operations.[INFO] /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-processor/src/test/java/com/healthedge/customer/ucare/component/ComponentScanTest.java: Recompile with -Xlint:unchecked for details.[INFO] [INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ ucare-core-processor ---[INFO] Tests are skipped.[INFO] [INFO] --- maven-jar-plugin:2.6:jar (default-jar) @ ucare-core-processor ---[INFO] Building jar: /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-processor/target/ucare-core-processor-20.3.0.6-SNAPSHOT.jar[INFO] [INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent-integration (agent-for-integ-tests) @ ucare-core-processor ---[INFO] argLine set to -javaagent:/home/weblogic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-processor/target/jacoco-it.exec,append=true[INFO] [INFO] --- jacoco-maven-plugin:0.8.2:report (jacoco-site) @ ucare-core-processor ---[INFO] Skipping JaCoCo execution due to missing execution data file.[INFO] [INFO] --- maven-install-plugin:2.4:install (default-install) @ ucare-core-processor ---[INFO] Installing /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-processor/target/ucare-core-processor-20.3.0.6-SNAPSHOT.jar to /home/weblogic/.m2/repository/com/healthedge/customer/ucare/ucare-core-processor/20.3.0.6-SNAPSHOT/ucare-core-processor-20.3.0.6-SNAPSHOT.jar[INFO] Installing /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-processor/pom.xml to /home/weblogic/.m2/repository/com/healthedge/customer/ucare/ucare-core-processor/20.3.0.6-SNAPSHOT/ucare-core-processor-20.3.0.6-SNAPSHOT.pom[INFO]                                                                         [INFO] ------------------------------------------------------------------------[INFO] Building Connector Correspondence:: ucare-core-bundle 20.3.0.6-SNAPSHOT[INFO] ------------------------------------------------------------------------[INFO] [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ ucare-core-bundle ---[INFO] Deleting /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-bundle/target[INFO] [INFO] --- maven-enforcer-plugin:3.0.0-M1:enforce (enforce-maven) @ ucare-core-bundle ---[INFO] [INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent (agent-for-unit-tests) @ ucare-core-bundle ---[INFO] argLine set to -javaagent:/home/weblogic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-bundle/target/jacoco.exec,append=true[INFO] [INFO] --- hegenerator-maven-plugin:20.3.0.6-202009091547-db67a93:sqrygen (generate-static-queries) @ ucare-core-bundle ---[INFO] [INFO] --- hegenerator-maven-plugin:20.3.0.6-202009091547-db67a93:inquirygen (generate-static-queries) @ ucare-core-bundle ---[INFO] [INFO] --- properties-maven-plugin:1.0.0:write-project-properties (default) @ ucare-core-bundle ---[INFO] [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ ucare-core-bundle ---[INFO] Using 'UTF-8' encoding to copy filtered resources.[INFO] skip non existing resourceDirectory /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-bundle/src/main/resources[INFO] [INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ ucare-core-bundle ---[INFO] Changes detected - recompiling the module![INFO] Compiling 100 source files to /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-bundle/target/classes[INFO] Found class with @Component:UCareHouseholdingService[INFO] Found class with @Component:UCareMemberCorrespondenceService[INFO] Found class with @Component:UCareTransactionPrioritizationService[INFO] Found class with @Component:UCareAccountChangeService[INFO] Found class with @Component:UCareMemberEnrollmentService[INFO] Found class with @Component:UCareMemberReenrollmentService[INFO] Found class with @Component:UCareMemberNameChangeService[INFO] Found class with @Component:UCareExtractService[INFO] Found class with @Component:UCareManualCorrespondenceService[INFO] Found class with @Component:UCareMemberLISChangeService[INFO] Found class with @Component:UCareMemberDentalChangeService[INFO] Found class with @Component:UCareMemberAnnualJobRunService[INFO] Found class with @Component:UCareBenefitPlanChangeService[INFO] /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-bundle/src/main/java/com/healthedge/customer/ucare/core/processor/AUCareProcessor.java: Some input files use unchecked or unsafe operations.[INFO] /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-bundle/src/main/java/com/healthedge/customer/ucare/core/processor/AUCareProcessor.java: Recompile with -Xlint:unchecked for details.[INFO] [INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ ucare-core-bundle ---[INFO] Using 'UTF-8' encoding to copy filtered resources.[INFO] skip non existing resourceDirectory /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-bundle/src/test/resources[INFO] [INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ ucare-core-bundle ---[INFO] Changes detected - recompiling the module![INFO] Compiling 50 source files to /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-bundle/target/test-classes[WARNING] The following options were not recognized by any processor: '[package]'[INFO] /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-bundle/src/test/java/com/healthedge/customer/ucare/core/service/impl/TestUcareExtractService.java: /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-bundle/src/test/java/com/healthedge/customer/ucare/core/service/impl/TestUcareExtractService.java uses or overrides a deprecated API.[INFO] /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-bundle/src/test/java/com/healthedge/customer/ucare/core/service/impl/TestUcareExtractService.java: Recompile with -Xlint:deprecation for details.[INFO] /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-bundle/src/test/java/com/healthedge/customer/ucare/core/service/impl/TestUCareManualCorrespondenceService.java: Some input files use unchecked or unsafe operations.[INFO] /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-bundle/src/test/java/com/healthedge/customer/ucare/core/service/impl/TestUCareManualCorrespondenceService.java: Recompile with -Xlint:unchecked for details.[INFO] [INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ ucare-core-bundle ---[INFO] Tests are skipped.[INFO] [INFO] --- maven-bundle-plugin:3.0.1:bundle (default-bundle) @ ucare-core-bundle ---[WARNING] Bundle com.healthedge.customer.ucare:ucare-core-bundle:bundle:20.3.0.6-SNAPSHOT : Unused Export-Package instructions: [com.healthedge.customer.ucare.shared.*] [INFO] [INFO] --- build-helper-maven-plugin:1.10:attach-artifact (attach-artifact) @ ucare-core-bundle ---[INFO] [INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent-integration (agent-for-integ-tests) @ ucare-core-bundle ---[INFO] argLine set to -javaagent:/home/weblogic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-bundle/target/jacoco-it.exec,append=true[INFO] [INFO] --- jacoco-maven-plugin:0.8.2:report (jacoco-site) @ ucare-core-bundle ---[INFO] Skipping JaCoCo execution due to missing execution data file.[INFO] [INFO] --- maven-install-plugin:3.0.0-M1:install (default-install) @ ucare-core-bundle ---[INFO] Installing /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-bundle/target/ucare-core-bundle-20.3.0.6-SNAPSHOT.jar to /home/weblogic/.m2/repository/com/healthedge/customer/ucare/ucare-core-bundle/20.3.0.6-SNAPSHOT/ucare-core-bundle-20.3.0.6-SNAPSHOT.jar[INFO] Installing /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-bundle/pom.xml to /home/weblogic/.m2/repository/com/healthedge/customer/ucare/ucare-core-bundle/20.3.0.6-SNAPSHOT/ucare-core-bundle-20.3.0.6-SNAPSHOT.pom[INFO] Installing /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-bundle/target/classes/core-build.properties to /home/weblogic/.m2/repository/com/healthedge/customer/ucare/ucare-core-bundle/20.3.0.6-SNAPSHOT/ucare-core-bundle-20.3.0.6-SNAPSHOT-core-build.properties[INFO] [INFO] --- maven-bundle-plugin:3.0.1:install (default-install) @ ucare-core-bundle ---[INFO] Installing com/healthedge/customer/ucare/ucare-core-bundle/20.3.0.6-SNAPSHOT/ucare-core-bundle-20.3.0.6-SNAPSHOT.jar[INFO] Writing OBR metadata[INFO]                                                                         [INFO] ------------------------------------------------------------------------[INFO] Building Connector Correspondence:: ucare-core-repos 20.3.0.6-SNAPSHOT[INFO] ------------------------------------------------------------------------[INFO] [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ ucare-core-repos ---[INFO] Deleting /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-repos/target[INFO] [INFO] --- maven-enforcer-plugin:3.0.0-M1:enforce (enforce-maven) @ ucare-core-repos ---[INFO] [INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent (agent-for-unit-tests) @ ucare-core-repos ---[INFO] argLine set to -javaagent:/home/weblogic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-repos/target/jacoco.exec,append=true[INFO] [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ ucare-core-repos ---[INFO] Using 'UTF-8' encoding to copy filtered resources.[INFO] skip non existing resourceDirectory /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-repos/src/main/resources[INFO] [INFO] --- karaf-maven-plugin:4.0.4:features-generate-descriptor (default-features-generate-descriptor) @ ucare-core-repos ---[INFO] Generating feature descriptor file /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-repos/target/feature/feature.xml[INFO] ...done![INFO] [INFO] --- karaf-maven-plugin:4.0.4:kar (default-kar) @ ucare-core-repos ---[INFO] Building jar: /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-repos/target/ucare-core-repos-20.3.0.6-SNAPSHOT.kar[INFO] repository/com/healthedge/customer/ucare/ucare-core-bundle/20.3.0.6-SNAPSHOT/maven-metadata-local.xml already added, skipping[INFO] [INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent-integration (agent-for-integ-tests) @ ucare-core-repos ---[INFO] argLine set to -javaagent:/home/weblogic/.m2/repository/org/jacoco/org.jacoco.agent/0.8.2/org.jacoco.agent-0.8.2-runtime.jar=destfile=/home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-repos/target/jacoco-it.exec,append=true[INFO] [INFO] --- jacoco-maven-plugin:0.8.2:report (jacoco-site) @ ucare-core-repos ---[INFO] Skipping JaCoCo execution due to missing execution data file.[INFO] [INFO] --- maven-install-plugin:3.0.0-M1:install (default-install) @ ucare-core-repos ---[INFO] Installing /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-repos/target/ucare-core-repos-20.3.0.6-SNAPSHOT.kar to /home/weblogic/.m2/repository/com/healthedge/customer/ucare/ucare-core-repos/20.3.0.6-SNAPSHOT/ucare-core-repos-20.3.0.6-SNAPSHOT.kar[INFO] Installing /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-repos/pom.xml to /home/weblogic/.m2/repository/com/healthedge/customer/ucare/ucare-core-repos/20.3.0.6-SNAPSHOT/ucare-core-repos-20.3.0.6-SNAPSHOT.pom[INFO] Installing /home/weblogic/PROJECT/MASTER/ucare-core/ucare-core-repos/target/feature/feature.xml to /home/weblogic/.m2/repository/com/healthedge/customer/ucare/ucare-core-repos/20.3.0.6-SNAPSHOT/ucare-core-repos-20.3.0.6-SNAPSHOT-features.xml[INFO] ------------------------------------------------------------------------[INFO] Reactor Summary:[INFO] [INFO] HealthRules Ucare PS :: ucare-core ................. SUCCESS [  0.510 s][INFO] Connector Correspondence:: ucare-core-processor .... SUCCESS [  1.100 s][INFO] Connector Correspondence:: ucare-core-bundle ....... SUCCESS [  9.678 s][INFO] Connector Correspondence:: ucare-core-repos ........ SUCCESS [  0.495 s][INFO] ------------------------------------------------------------------------[INFO] BUILD SUCCESS[INFO] ------------------------------------------------------------------------[INFO] Total time: 12.952 s[INFO] Finished at: 2020-10-22T07:27:44-04:00[INFO] Final Memory: 124M/1909M[INFO] ------------------------------------------------------------------------
+
+Process finished with exit code 0
+ 

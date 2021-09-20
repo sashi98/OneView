@@ -1,0 +1,117 @@
+package oneview.ui.screens.jobtrigger.jobnames;
+
+import oneview.ui.screens.jobtrigger.context.ESContext;
+import oneview.ui.component.CJButton;
+import oneview.ui.component.CJComboBox;
+import oneview.ui.component.CJPanel;
+
+import javax.swing.*;
+import javax.swing.border.TitledBorder;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ItemEvent;
+import java.util.ArrayList;
+import java.util.List;
+
+import static oneview.ui.constants.DimensionConstants.*;
+import static oneview.ui.constants.GuiConstants.*;
+import static oneview.ui.constants.IconConstants.*;
+import static oneview.util.GuiUtil.newDimentionObj;
+
+public class JobNamesUI extends CJPanel {
+    private JobNamesComboBoxModel comboBoxModel;
+    private CJComboBox jobNamesComboBox;
+    private CJButton addJobNameButton;
+    private CJButton removeJobNameButton;
+
+    public JobNamesUI() {
+        super();
+        addJobNameButton = new CJButton(ADD_DEFAULT_ICON, ADD_HOVERED_ICON, ICON_WIDTH, ICON_HEIGHT, "Add Job Name");
+        removeJobNameButton = new CJButton(REMOVE_DEFAULT_ICON, REMOVE_HOVERED_ICON, ICON_WIDTH, ICON_HEIGHT, "Remove Job Name");
+        comboBoxModel = new JobNamesComboBoxModel();
+        jobNamesComboBox = new CJComboBox(comboBoxModel);
+        jobNamesComboBox.setBorder(LINE_GRAY_1THK_BORDER);
+        jobNamesComboBox.setPreferredSize(newDimentionObj(JOB_NAMES_COMBOBOX_WIDTH, JOB_NAMES_COMBOBOX_HEIGHT));
+        this.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        this.add(jobNamesComboBox);
+        this.add(addJobNameButton);
+        this.add(removeJobNameButton);
+        this.setBorder(new TitledBorder(LINE_LGRAY_1THK_BORDER, "Cron Job Names", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, TITLE_HEADER_1_FONT));
+
+    }
+
+    public void actionPerformed(ActionEvent e, MasterData ESContext) {
+        if (e.getSource().equals(getAddJobNameButton())) {
+            String name = JOptionPane.showInputDialog(this, "Add cron job name");
+            addItemAndSetSelected(name);
+            ESContext.setCronJobName(name);
+        } else {
+            if (comboBoxModel.getSelectedItem() != null) {
+                comboBoxModel.getList().remove(comboBoxModel.getSelectedItem());
+                comboBoxModel = new JobNamesComboBoxModel(comboBoxModel.getList());
+                if (!comboBoxModel.getList().isEmpty()) {
+                    comboBoxModel.setSelectedItem(comboBoxModel.getElementAt(0));
+                    jobNamesComboBox.setModel(comboBoxModel);
+                    setToolTipText(comboBoxModel.getSelectedItem().toString());
+                    ESContext.setCronJobName(comboBoxModel.getSelectedItem().toString());
+                } else{
+                    jobNamesComboBox.setModel(comboBoxModel);
+                    ESContext.setCronJobName("");
+                }
+            }
+        }
+
+        ESContext.setCronJobNameList(getNonSelectedCronJobNameList());
+    }
+
+    private List<String> getNonSelectedCronJobNameList() {
+        List<String> jobNameList = new ArrayList(getComboBoxModel().getList());
+        jobNameList.remove(getComboBoxModel().getSelectedItem());
+        return jobNameList;
+    }
+
+    public void addItemAndSetSelected(String name) {
+        comboBoxModel = new JobNamesComboBoxModel(comboBoxModel.getList());
+        if (StringUtil.isNotBlank(name)) {
+            comboBoxModel.addJobName(name);
+            jobNamesComboBox.setModel(comboBoxModel);
+        }
+        jobNamesComboBox.setToolTipText("Selected:" + name);
+
+    }
+
+    public JobNamesComboBoxModel getComboBoxModel() {
+        return comboBoxModel;
+    }
+
+    public JComboBox getJobNamesComboBox() {
+        return jobNamesComboBox;
+    }
+
+    public CJButton getAddJobNameButton() {
+        return addJobNameButton;
+    }
+
+    public CJButton getRemoveJobNameButton() {
+        return removeJobNameButton;
+    }
+
+    public void itemStateChanged(ItemEvent e, MasterData ESContext) {
+        if (e.getStateChange() == ItemEvent.SELECTED) {
+            String name = e.getItem().toString();
+            ESContext.setCronJobName(name);
+            ESContext.setCronJobNameList(getNonSelectedCronJobNameList());
+            jobNamesComboBox.setToolTipText("Selected:" + name);
+        }
+
+    }
+
+    public void addItems(List<String> cronJobNameList) {
+        List<String> cronJobNameNewList = new ArrayList<>();
+        cronJobNameNewList.add(getComboBoxModel().getSelectedItem().toString());
+        cronJobNameNewList.addAll(cronJobNameList);
+        JobNamesComboBoxModel jobNamesComboBoxModel = new JobNamesComboBoxModel(cronJobNameNewList);
+        jobNamesComboBoxModel.setSelectedItem(getComboBoxModel().getSelectedItem());
+        jobNamesComboBox.setModel(jobNamesComboBoxModel);
+    }
+}
